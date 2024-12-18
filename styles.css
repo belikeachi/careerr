@@ -1,26 +1,67 @@
-document.getElementById("careerQuiz").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    let q1 = document.querySelector('input[name="q1"]:checked');
-    let q2 = document.querySelector('input[name="q2"]:checked');
-    let q3 = document.querySelector('input[name="q3"]:checked');
-    let q4 = document.querySelector('input[name="q4"]:checked');
-    let q5 = document.querySelector('input[name="q5"]:checked');
-    let q6 = document.querySelector('input[name="q6"]:checked');
-    let q7 = document.querySelector('input[name="q7"]:checked');
-    let q8 = document.querySelector('input[name="q8"]:checked');
-    let q9 = document.querySelector('input[name="q9"]:checked');
-    let q10 = document.querySelector('input[name="q10"]:checked');
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
 
-    if (!q1 || !q2 || !q3 || !q4 || !q5 || !q6 || !q7 || !q8 || !q9 || !q10) {
-        alert("Please answer all questions.");
-        return;
-    }
+.quiz-container {
+    background-color: white;
+    width: 100%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    border: 1px solid #e1e1e1;
+}
 
-    let career = "";
-    let score = {
-        creative: 0,
-        technical: 0,
-        analytical: 0,
-        people: 0,
-       
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.question {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+}
+
+label {
+    display: block;
+    margin: 12px 0;
+    font-size: 16px;
+    color: #666;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 18px 24px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#results {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+    display: none;
+}
