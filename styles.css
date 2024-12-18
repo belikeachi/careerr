@@ -1,42 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+document.getElementById("careerQuiz").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+    let q3 = document.querySelector('input[name="q3"]:checked');
+    let q4 = document.querySelector('input[name="q4"]:checked');
+    let q5 = document.querySelector('input[name="q5"]:checked');
+    let q6 = document.querySelector('input[name="q6"]:checked');
+    let q7 = document.querySelector('input[name="q7"]:checked');
+    let q8 = document.querySelector('input[name="q8"]:checked');
+    let q9 = document.querySelector('input[name="q9"]:checked');
+    let q10 = document.querySelector('input[name="q10"]:checked');
 
-.quiz-container {
-    background-color: white;
-    width: 100%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+    if (!q1 || !q2 || !q3 || !q4 || !q5 || !q6 || !q7 || !q8 || !q9 || !q10) {
+        alert("Please answer all questions.");
+        return;
+    }
 
-h1 {
-    text-align: center;
-}
-
-.question {
-    margin-bottom: 20px;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-#results {
-    margin-top: 20px;
-    text-align: center;
-    font-weight: bold;
-}
+    let career = "";
+    let score = {
+        creative: 0,
+        technical: 0,
+        analytical: 0,
+        people: 0,
+       
