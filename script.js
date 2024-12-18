@@ -1,42 +1,63 @@
-document.getElementById("careerQuiz").addEventListener("submit", function(event) {
-    event.preventDefault();
-    
-    let q1 = document.querySelector('input[name="q1"]:checked');
-    let q2 = document.querySelector('input[name="q2"]:checked');
-    let q3 = document.querySelector('input[name="q3"]:checked');
-    
-    if (!q1 || !q2 || !q3) {
-        alert("Please answer all questions.");
-        return;
-    }
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
 
-    let career = "";
-    let score = {
-        creative: 0,
-        technical: 0,
-        analytical: 0,
-        people: 0,
-        machines: 0,
-        office: 0,
-        outdoor: 0
-    };
+.quiz-container {
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 
-    // Assign scores
-    score[q1.value]++;
-    score[q2.value]++;
-    score[q3.value]++;
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
 
-    // Suggest career based on scores
-    if (score.creative > score.technical && score.creative > score.analytical) {
-        career = "Creative Career (e.g., Designer, Writer, Artist)";
-    } else if (score.technical > score.creative && score.technical > score.analytical) {
-        career = "Technical Career (e.g., Engineer, Developer, IT Specialist)";
-    } else if (score.analytical > score.creative && score.analytical > score.technical) {
-        career = "Analytical Career (e.g., Data Analyst, Researcher)";
-    } else {
-        career = "Mixed Career Path (Consider a combination of interests!)";
-    }
+.question {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
 
-    // Show result
-    document.getElementById("results").innerText = "We suggest a career in: " + career;
-});
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#results {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: #333;
+}
