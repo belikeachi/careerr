@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Career Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Find Your Career Path</h1>
+        <form id="careerQuiz">
+            <div class="question">
+                <p>What kind of activities do you enjoy?</p>
+                <label><input type="radio" name="q1" value="creative"> Creative work (writing, art, design)</label><br>
+                <label><input type="radio" name="q1" value="technical"> Technical work (coding, engineering)</label><br>
+                <label><input type="radio" name="q1" value="analytical"> Analytical work (research, data analysis)</label><br>
+            </div>
+            <div class="question">
+                <p>Do you prefer working with:</p>
+                <label><input type="radio" name="q2" value="people"> People</label><br>
+                <label><input type="radio" name="q2" value="machines"> Machines/Technology</label><br>
+            </div>
+            <div class="question">
+                <p>Which environment do you enjoy the most?</p>
+                <label><input type="radio" name="q3" value="office"> Office work</label><br>
+                <label><input type="radio" name="q3" value="outdoor"> Outdoor work</label><br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
